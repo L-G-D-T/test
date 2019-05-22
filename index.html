@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>Расчет сметы под ключ - Мос-Брусчатка</title>
+		<script src="https://www.youtube.com/iframe_api"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="description" content=""/><meta name="keywords" content=""/><meta name="format-detection" content="telephone=no"/><meta name="MobileOptimized" content="320"/><meta name="theme-color" content="#ffae00"/><link rel="shortcut icon" href="favicon.ico"/><link href="assets/css/app.css?0827680647b36118dca1" rel="stylesheet"/></head>
+	<body>
+		<div id="root"></div>
+			<script>
+				let ytVideos = document.getElementsByClassName("js-youtube");
+				let players = [];
+
+				Array.from(ytVideos).forEach(function (video) {
+					players.push(video.id);
+				});
+				console.log(players);
+
+				function onYouTubeIframeAPIReady() {
+					Array.from(ytVideos).forEach(function(video) {
+						video.onclick = function() {
+							players[$(this).attr('id')] = new YT.Player($(this).attr('id'), {
+								height: '360',
+								width: '640',
+								videoId: $(this).data('embed')
+							});
+						}
+					});
+				}
+			</script>
+	<script type="text/javascript" src="assets/js/vendors.js?0827680647b36118dca1"></script><script type="text/javascript" src="assets/js/app.js?0827680647b36118dca1"></script></body>
+</html>
